@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framburguer - Cardápio Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Framburguer - Cardápio Digital</h1>
+    <nav>
+        <ul>
+            <li><a href="#cadastro">Cadastro de Produtos</a></li>
+            <li><a href="#atualizacao">Atualização de Preços</a></li>
+            <li><a href="#pedido">Fazer Pedido</a></li>
+        </ul>
+    </nav>
+
+    <section id="cadastro">
+        <h2>Cadastro de Produtos</h2>
+        <form id="cadastroForm">
+            <label for="id">ID do Produto:</label>
+            <input type="text" id="id" name="id" required>
+            <label for="nome">Nome do Produto:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="descricao">Descrição do Produto:</label>
+            <textarea id="descricao" name="descricao" required></textarea>
+            <label for="preco">Preço do Produto (R$):</label>
+            <input type="number" id="preco" name="preco" required>
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" name="categoria" required>
+                <option value="comida">Comida</option>
+                <option value="bebida">Bebida</option>
+            </select>
+            <label for="imagem">Imagem do Produto:</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" required>
+            <button type="submit">Cadastrar Produto</button>
+        </form>
+    </section>
+
+    <section id="atualizacao">
+        <h2>Atualização de Preços</h2>
+        <form id="atualizacaoForm">
+            <label for="idAtualizacao">ID do Produto:</label>
+            <input type="text" id="idAtualizacao" name="idAtualizacao" required>
+            <label for="precoAtualizacao">Novo Preço (R$):</label>
+            <input type="number" id="precoAtualizacao" name="precoAtualizacao" required>
+            <button type="submit">Atualizar Preço</button>
+        </form>
+    </section>
+
+    <section id="pedido">
+        <h2>Fazer Pedido</h2>
+        <div id="menuCategorias">
+            <button onclick="mostrarProdutos('comida')">Comidas</button>
+            <button onclick="mostrarProdutos('bebida')">Bebidas</button>
+        </div>
+        <div id="produtos"></div>
+        <div id="carrinho">
+            <h3>Carrinho de Compras</h3>
+            <ul id="listaCarrinho"></ul>
+            <button onclick="fecharPedido()">Fechar Pedido</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
